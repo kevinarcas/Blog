@@ -1,0 +1,305 @@
+body{
+  background-color: #d1defa;
+  font-family: sans-serif, Arial, Helvetica;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.layout{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-areas:'header header header header'
+                      'nav nav nav nav'
+                      'section section section aside'
+                      'footer footer footer footer';
+  grid-template-rows: 130px 70px auto 40px;
+  grid-template-columns: auto auto auto 25%;
+}
+
+/*********************************************************
+************************* HEADER *************************
+*********************************************************/
+
+.header{
+  grid-area: header;
+  background-color: white;
+  text-align: left;
+  font-style: italic;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center; /* Vertical */
+}
+
+.logo{
+  background: linear-gradient(90deg, #03228f 0%, #0e73e4 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 400px;
+  display: flex; /* Para centrar el play vertical y horizontalmente. */
+  justify-content: center; /* horizontal */
+  align-items: center; /* Vertical */
+}
+
+.play{
+  width: 0px;
+  height: 0px;
+  border-left: 12px solid white;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.header h1{
+  margin-left: 15px;
+}
+
+/*********************************************************
+*************************** NAV **************************
+*********************************************************/
+
+.nav{
+  grid-area: nav;
+  background: linear-gradient(90deg, #03228f 0%, #0e73e4 100%);
+}
+
+.nav > ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav li{
+  padding: 10px;
+}
+
+.nav a{
+  display: block;
+  margin: 0px 30px;
+  font-size: 18px;
+  font-weight: lighter;
+  color: white;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.nav a:hover{
+  transform: scale(1.2, 1.2); /* Se hace un 20% más grande horizontal y verticalmente. */
+}
+
+/*********************************************************
+************************* CONTENT ************************
+*********************************************************/
+
+.content{
+  grid-area: section;
+  background-color: #f6f7f9;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: initial;
+}
+
+.content .item{
+  flex-grow: 1; /* Los item tienen el mismo ancho */
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 50px 25px;
+  box-shadow: 0px 0px 6px black;
+  display: flex;
+  text-align: left;
+  max-height: 225px;
+}
+
+.content .item .mascara{
+  width: 20%;
+  overflow: hidden;
+  margin-right: 40px;
+}
+
+.form-group .mascara-edit{
+  width: 150px;
+  margin: 5px;
+}
+
+.content .item .mascara img{
+  width: 100%;
+}
+
+.form-group .mascara-edit img{
+  width: 150px;
+}
+
+.content .item h3{
+  font-size: 30px;
+}
+
+.content .item h3 a{
+  text-decoration: none;
+  color: black;
+  transition: all 300ms;
+}
+
+.content .item h3 a:hover{
+  color: #0b70e1;
+}
+
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+.edit{
+  width: 100px;
+  background-color: #0b70e1;
+  color: white;
+  border: 0px;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.edit{
+  margin-right: 20px;
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+
+.edit:hover{
+  background-color: #e77b00;
+}
+
+.item .delete:hover{
+  background-color: #9b0202;
+}
+
+/*********************************************************
+************************* ASIDE **************************
+*********************************************************/
+
+.aside{
+  grid-area: aside;
+  background-color: #f6f7f9;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  min-height: 450px;
+}
+
+.aside > div{
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.aside input[type="text"],
+.aside textarea{
+  background-color: #f6f7f9;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border-color: transparent;
+  color: #454545;
+  outline: 0; /* No pinta borde al estar dentro del input */
+  
+}
+
+/*********************************************************
+************************* FOOTER *************************
+*********************************************************/
+
+.footer{
+  grid-area: footer;
+  background-color: #d1defa;
+  color: #454545;
+  border-top: 1px solid white;
+  text-align: left;
+  line-height: 40px;
+  padding-left: 25px;
+}
+
+.footer a{
+  color: #0b468a;
+  text-decoration: none;
+}
+
+/******************************************************
+******************** INICIO y CREAR********************
+******************************************************/
+.inicio,
+.crear{
+  width: 85%;
+  padding: 55px;
+  padding-bottom: 75px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 25px auto;
+}
+
+.inicio h1,
+.crear h1{
+  font-size: 30px;
+  color: #444;
+}
+
+.inicio p
+.crear p{
+  display: block;
+  margin-bottom: 40px;
+}
+
+.form-group{
+  width: 50%;
+  margin: 0px auto;
+}
+
+.form-group label{
+  display: block;
+  text-align: left;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-group input[type='text'],
+.form-group input[type='file'],
+.form-group textarea{
+  border: 1px solid #ddd;
+  outline: 0;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 15px;
+
+}
+
+
+/*********************************************************
+*********************** RESPONSIVE ***********************
+*********************************************************/
+
+@media (max-width: 1080px) {
+  .content{
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .content .item{
+      width: 80%;
+  }
+}
